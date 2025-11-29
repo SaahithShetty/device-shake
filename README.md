@@ -13,25 +13,67 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`enableListening()`](#enablelistening)
+* [`stopListening()`](#stoplistening)
+* [`addListener('shake', ...)`](#addlistenershake-)
+* [`removeAllListeners()`](#removealllisteners)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### enableListening()
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+enableListening() => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+--------------------
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+
+### stopListening()
+
+```typescript
+stopListening() => Promise<void>
+```
 
 --------------------
+
+
+### addListener('shake', ...)
+
+```typescript
+addListener(eventName: 'shake', listenerFunc: () => void) => Promise<PluginListenerHandle>
+```
+
+| Param              | Type                       |
+| ------------------ | -------------------------- |
+| **`eventName`**    | <code>'shake'</code>       |
+| **`listenerFunc`** | <code>() =&gt; void</code> |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+
+--------------------
+
+
+### removeAllListeners()
+
+```typescript
+removeAllListeners() => Promise<void>
+```
+
+--------------------
+
+
+### Interfaces
+
+
+#### PluginListenerHandle
+
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 </docgen-api>
